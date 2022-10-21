@@ -95,7 +95,8 @@ public class MaquinaExpendedoraMejorada {
     } 
     
     public int vaciarDineroDeLaMaquina() {
-        int dineroDevuelto = totalDineroAcumulado;
+        int dineroDevuelto = totalDineroAcumulado + balanceClienteActual;
+        balanceClienteActual = 0;
         totalDineroAcumulado = 0;
         return dineroDevuelto;
     }
