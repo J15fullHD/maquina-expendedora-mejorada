@@ -32,6 +32,7 @@ public class MaquinaExpendedoraMejorada {
         totalDineroAcumulado = 0;
         estacionOrigen = "Leon";
         estacionDestino = "Oviedo"; 
+        billeteVendido = 0;
     }
 
     /**
@@ -111,12 +112,10 @@ public class MaquinaExpendedoraMejorada {
     }
     
     public int getNumeroBilletesVendidos() {
-        int numeroBilletesVendidos = billeteVendido;
-        return numeroBilletesVendidos;
+        return billeteVendido;
     }
     
     public void imprimirNumeroBilletesVendidos() {
-        int numBilletesVendidos = getNumeroBilletesVendidos();
-        System.out.println("Se han vendido " + numBilletesVendidos + " billetes");
+        System.out.println("Se han vendido " + getNumeroBilletesVendidos() + " billetes");
     }
 }
