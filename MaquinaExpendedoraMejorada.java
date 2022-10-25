@@ -98,16 +98,11 @@ public class MaquinaExpendedoraMejorada {
         int dineroDevuelto;
         if (balanceClienteActual > 0) {
             dineroDevuelto = -1;
+            System.out.println("Imposible devolver dinero, operación en curso");
         } else {
             dineroDevuelto = totalDineroAcumulado;
             totalDineroAcumulado = 0;
         }
         return dineroDevuelto;
-       /**
-        *   int dineroDevuelto = totalDineroAcumulado + balanceClienteActual;
-        *   balanceClienteActual = 0;
-        *   totalDineroAcumulado = 0;
-        *   return dineroDevuelto;
-        */
     }
 }
