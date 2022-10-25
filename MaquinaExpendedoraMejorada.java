@@ -71,50 +71,31 @@ public class MaquinaExpendedoraMejorada {
      */
     public void imprimirBillete() {
         int cantidadDeDineroQueFalta = precioBillete - balanceClienteActual;
-         if (premioMaquina == true) {
-             int descuento = (precioBillete * 25) / 100;
-             if (cantidadDeDineroQueFalta <= 0) {        
-                // Simula la impresion de un billete
-                System.out.println("##################");
-                System.out.println("# Billete de tren:");
-                System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
-                System.out.println("# " + precioBillete + " euros.");
-                System.out.println("##################");
-                System.out.println();
-                System.out.println("ENHORABUENA, tu billete tiene premio. Obtienes " + descuento + " € de descuento en CEX.");
-                System.out.println();
-    
-                // Actualiza el total de dinero acumulado en la maquina
-                totalDineroAcumulado = totalDineroAcumulado + precioBillete;
-                // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
-                balanceClienteActual = balanceClienteActual - precioBillete;
+        int descuento = (precioBillete * 25) / 100;
+         if (cantidadDeDineroQueFalta <= 0) {        
+            // Simula la impresion de un billete
+            System.out.println("##################");
+            System.out.println("# Billete de tren:");
+            System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
+            System.out.println("# " + precioBillete + " euros.");
+            System.out.println("##################");
+            System.out.println();
             
-                billeteVendido++;
-            } else {
-                System.out.println("Necesitas introducir " + cantidadDeDineroQueFalta + " euros mas!");
-                    
+            if (premioMaquina == true) {
+                System.out.println("ENHORABUENA, tu billete tiene premio. Has obtenido " + descuento + "€ de descuento en CEX");
             }
-         } else {
-             if (cantidadDeDineroQueFalta <= 0) {        
-                // Simula la impresion de un billete
-                System.out.println("##################");
-                System.out.println("# Billete de tren:");
-                System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
-                System.out.println("# " + precioBillete + " euros.");
-                System.out.println("##################");
-                System.out.println();         
-    
-                // Actualiza el total de dinero acumulado en la maquina
-                totalDineroAcumulado = totalDineroAcumulado + precioBillete;
-                // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
-                balanceClienteActual = balanceClienteActual - precioBillete;
             
-                billeteVendido++;
-            } else {
-                System.out.println("Necesitas introducir " + cantidadDeDineroQueFalta + " euros mas!");
+            // Actualiza el total de dinero acumulado en la maquina
+            totalDineroAcumulado = totalDineroAcumulado + precioBillete;
+            // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
+            balanceClienteActual = balanceClienteActual - precioBillete;
+            
+            billeteVendido++;
+        }
+        else {
+            System.out.println("Necesitas introducir " + cantidadDeDineroQueFalta + " euros mas!");
                     
-            }
-         }
+        }                       
     }
     
     /**
