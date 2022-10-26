@@ -92,7 +92,7 @@ public class MaquinaExpendedoraMejorada {
                 System.out.println("##################");
                 System.out.println();
             
-                if (premioMaquina == true) {
+                if (premioMaquina == true && ((billeteVendido + 1) % 4) == 0) {
                     System.out.println("ENHORABUENA, tu billete tiene premio. Has obtenido " + descuento + "€ de descuento en CEX");
                     System.out.println();
                 }
@@ -135,6 +135,7 @@ public class MaquinaExpendedoraMejorada {
     }
     
     public int getNumeroBilletesVendidos() {
+        int numBilleteVendido = billeteVendido - 1;
         return billeteVendido;
     }
     
